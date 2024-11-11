@@ -1,0 +1,197 @@
+/* Register Page Styles */
+body {
+    background-color: #40464d;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    background-color: rgb(250, 244, 233);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
+h2 {
+    margin: 0; /* Remove default margin from heading */
+}
+
+
+.form-control {
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    transition: border 0.3s ease;
+}
+
+.form-control:focus {
+    border-color:#40464d;
+    box-shadow: 0 0 5px rgba(6, 187, 204, 0.5);
+}
+
+.btn-primary {
+    background-color:rgb(88, 86, 83);
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color:tomato;
+    transition: background-color 0.3s ease;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-primary:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+    color: #777;
+}
+
+/* Animation for Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+#question {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Spinner Overlay */
+#spinner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner-border {
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.5rem;
+    color: #fc9b40;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#button-spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0.3em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-spin 0.75s linear infinite;
+    vertical-align: middle;
+    margin-left: 8px;
+    border-width: 0.3rem;
+    color: #fff563;
+    display: none;
+}
+
+@keyframes button-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Toast container position */
+.toast-container {
+position: fixed;
+top: 1rem;
+right: 1rem;
+z-index: 1100;
+}
+
+/* Toast notification header styling */
+.toast-header {
+background-color: #fc9b40; /* Custom background color for header */
+color: white;              /* Text color */
+font-weight: bold;
+}
+
+/* Toast body styling */
+.toast-body {
+background-color: #fff;
+color: #000;
+padding: 1rem;
+}
+
+/* Toast close button */
+.toast .btn-close {
+filter: invert(1); /* Inverts close button color */
+}
+
+/* Adding box shadow to make toast pop out */
+.toast {
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation to slide in from the right */
+.toast.fade.show {
+transform: translateX(0);
+opacity: 1;
+transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Initial hidden state */
+.toast.fade {
+transform: translateX(100%);
+opacity: 0;
+}
+

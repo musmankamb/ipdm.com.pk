@@ -1,0 +1,880 @@
+ /*** Navbar ***/
+ .navbar {
+    background-color: #ffffff;
+ }
+ .navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-ipdm .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-ipdm .navbar-nav .nav-link:hover,
+.navbar-ipdm .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-ipdm .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-ipdm .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-ipdm .navbar-brand,
+.navbar-ipdm a.btn {
+    height: 75px;
+}
+
+.navbar-ipdm .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-ipdm.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+/* Dropdown menu fade-down */
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+
+    /* Submenu CSS */
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+    }
+
+    /* Show subdropdown on hover */
+    .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Align submenu properly */
+    .navbar .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+        transition: all .5s ease;
+    }
+}
+/* General button styling */
+.btn {
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Read More Button with Icon */
+.read-more-btn i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.read-more-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    position: relative;
+}
+
+.read-more-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+}
+
+/* Register Button with Arrow in Circle */
+.register-btn {
+    position: relative;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    color: #000;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #ddd; /* Slightly darker background on hover */
+    color: #000;
+}
+
+.register-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover .register-icon {
+    background-color: #007bff; /* Change arrow circle to blue on hover */
+}
+
+
+.join-now-btn {
+    background-color: #ff6347; /* Button background color */
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative; /* To position arrow */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and arrow */
+}
+
+.join-now-btn .arrow-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* White circle */
+    color: #ff6347; /* Arrow color */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.join-now-btn:hover {
+    background-color: #ff4500; /* Change button color on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.join-now-btn:hover .arrow-circle {
+    background-color: #000000; /* Change arrow circle background on hover */
+    color: white; /* Change arrow color on hover */
+    transform: translateX(5px); /* Animate arrow movement */
+}
+
+/* Styling for the "View All" link */
+.view-all-link {
+    display: inline-block;
+    background-color: transparent; /* Transparent background for a minimal look */
+    color: #007bff; /* Primary blue color */
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #007bff; /* Border matches the text color */
+    border-radius: 30px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-weight: 600;
+}
+
+.view-all-link:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* Change text to white on hover */
+    text-decoration: none;
+}
+
+/* Add spacing to top or bottom as needed */
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+
+
+/* Newsletter styling */
+.newsletter {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color:white;
+}
+
+.newsletter-section p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Input container to hold both input and button */
+.submit-newsletter {
+    position: relative;
+    width: 100%;
+}
+
+.input-newsletter {
+    width: 100%;
+    padding: 10px 15px;
+    padding-right: 120px; /* Add padding to the right for the button */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.input-newsletter:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit button inside the input field */
+.submit-newsletter-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-newsletter-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Grid Layout for Course Cards */
+#courses-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 20px; /* Space between course items */
+    margin-bottom: 30px;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+    #courses-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #courses-container {
+        grid-template-columns: 1fr; /* 1 item per row on small screens */
+    }
+}
+
+
+
+
+.course-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.course-item .course-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-item .course-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-item:hover .course-image img {
+    transform: scale(1.05);
+}
+
+.course-item .course-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.course-item h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.course-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.course-item .price-circle {
+    font-size: 1.1rem;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.course-item .course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9; /* Light background for separation */
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Light shadow effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.course-item .course-meta small {
+    font-size: 0.9rem; /* Slightly increase font size */
+    font-weight: 500;  /* Make text slightly bolder */
+    color: #333; /* Darker font color */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    transition: color 0.3s ease;
+}
+
+.course-item .course-meta i {
+    margin-right: 0; /* Remove manual margin */
+    font-size: 1.2rem; /* Slightly increase icon size */
+    color: #007bff; /* Maintain brand color for icons */
+    transition: transform 0.3s ease, color 0.3s ease; /* Add hover transition for icons */
+}
+
+/* Add hover effect for the meta section */
+.course-item:hover .course-meta {
+    background-color: #f1f1f1; /* Darken background on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+/* Hover effect for icons and text */
+.course-item:hover .course-meta i {
+    transform: scale(1.1); /* Slight icon zoom on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.course-item:hover .course-meta small {
+    color: #007bff; /* Blue text on hover */
+}
+
+.course-item .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    position: relative; /* Use relative instead of absolute */
+}
+
+.course-item .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-item .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.course-item .read-more-btn {
+    background-color: #007bff;
+    color: white;
+    border-radius: 30px 0 0 30px;
+}
+
+.course-item .read-more-btn:hover {
+    background-color: #1d72b8;
+}
+
+.course-item .register-btn {
+    background-color: #28a745;
+    color: white;
+    border-radius: 0 30px 30px 0;
+}
+
+.course-item .register-btn:hover {
+    background-color: #1aa34a;
+}
+
+/*------------------*/
+/* Styling for pagination controls */
+.pagination .page-item .page-link {
+    color: #007bff;
+    border: 1px solid #007bff;
+    margin: 0 5px;
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #ccc;
+}
+
+/* Spinner Overlay */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+}
+
+.spinner-overlay .spinner-border {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Styling the Filter Section */
+.filter-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-container .form-control {
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    display: none;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Animations */
+.modal-content {
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal.fade .modal-dialog {
+    transition: all 0.3s ease-in-out;
+}
+
+.modal.fade .modal-dialog.modal-lg {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Button Animations */
+.btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tooltip Styling */
+[data-bs-toggle="tooltip"] {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+[data-bs-toggle="tooltip"]:hover .tooltip {
+    opacity: 1;
+    top: -50px;
+}
+
+/* Example: Tooltip on a Read More button */
+.read-more-btn[data-bs-toggle="tooltip"] .tooltip {
+    content: "Learn more about this course!";
+}
+
+
+.page-header {
+    background: url('../img/courses/66fd4275a8b4d.webp') no-repeat center center; /* Replace with your image path */
+    background-size: cover;
+    position: relative; /* To position overlay */
+    color: white;
+}
+
+/* Optional: Dark overlay for better readability */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333; /* Dark background */
+    color: #ddd; /* Light text for contrast */
+}
+
+.footer a {
+    color: #aaa; /* Light gray links */
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #fff; /* Hover effect to change link color */
+}
+
+.footer h4 {
+    color: #fff; /* White color for headings */
+}
+
+.footer p {
+    color: #ccc; /* Softer text for descriptions */
+}
+
+.footer .btn-link {
+    padding: 0;
+    color: #aaa; /* Light gray links for quick links */
+    text-decoration: none;
+}
+
+.footer .btn-link:hover {
+    color: #fff; /* White color on hover */
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.btn-social {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    margin-right: 10px;
+    color: #ddd;
+    border-color: #ddd;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    color: #fff;
+    background-color: #007bff; /* Brand blue hover effect */
+    border-color: #007bff;
+}
+
+/* Gallery Styling */
+.footer .gallery img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.footer .gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Newsletter Section */
+.newsletter-section h4 {
+    color: #fff; /* White for newsletter heading */
+}
+
+.newsletter-section p {
+    color: #ccc;
+}
+
+.newsletter-section input {
+    background-color: #444; /* Darker background for input field */
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 30px;
+    padding-right: 100px; /* Space for the button inside the input */
+}
+
+.newsletter-section input::placeholder {
+    color: #bbb;
+}
+
+.newsletter-section .submit-newsletter-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-section .submit-newsletter-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Sub-footer Styles */
+.sub_footer {
+    border-top: 1px solid #444; /* Divider line for sub-footer */
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.footer-menu a {
+    color: #aaa;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #fff; /* Change to white on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .footer-menu a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+
+
+/* Gallery Container */
+.gallery-container {
+    padding: 50px 0;
+}
+
+/* Gallery Items */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Styling */
+.gallery-img {
+    width: 100%;
+    height: 300px; /* Fixed height for a uniform grid */
+    object-fit: cover; /* Ensures images fill the container without distortion */
+    border-radius: 15px; /* Smooth corners */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+}
+
+/* Hover Effect on Gallery Items */
+.gallery-item:hover .gallery-img {
+    transform: scale(1.08); /* Slight zoom on hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    border-radius: 25px; /* Smoother, more exaggerated rounding on hover */
+}
+
+/* Optional: Caption on Hover */
+.gallery-item::before {
+    content: attr(data-title); /* Shows the image title */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 0 0 15px 15px; /* Match the border radius of the image */
+}
+
+.gallery-item:hover::before {
+    opacity: 1; /* Show caption on hover */
+}
+
+/* Modal Image */
+#modalImage {
+    width: 100%; /* Full-width for modal image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Match the gallery image's rounded corners */
+    transition: transform 0.3s ease;
+}
+
+#modalImage:hover {
+    transform: scale(1.02); /* Slight zoom-in on hover inside the modal */
+}
+
+/* Spinner Overlay */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+}
+
+.spinner-overlay .spinner-border {
+    width: 4rem;
+    height: 4rem;
+}
+
+
+/* Contact Item Background and Styling */
+.contact-item {
+background-color: #c7d4f1;  /* Light grey background */
+border-radius: 10px;        /* Rounded corners */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+transition: background-color 0.3s ease;   /* Smooth hover transition */
+padding: 10px;
+
+}
+
+/* Hover effect to change background color */
+.contact-item:hover {
+background-color: #e6e6e6;  /* Darker grey on hover */
+
+}
+
+/* Ensuring consistent layout with icon and text alignment */
+.contact-item i {
+min-width: 30px;
+font-size: 20px;
+
+}
+
+/* Flexbox for Contact Info */
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 10px; /* Space between items */
+
+}
+
+.contact-info .d-flex {
+align-items: center;
+}
+
+/* Link hover effect */
+.contact-info a:hover {
+text-decoration: underline;
+}

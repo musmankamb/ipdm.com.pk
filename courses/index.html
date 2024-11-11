@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>IPDM</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/logo.webp" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet   -->
+     <link href="../css/courses.css" rel="stylesheet"> 
+ 
+</head>
+<style>
+ 
+
+
+
+</style>
+<body>
+    <div id="spinner-overlay" class="spinner-overlay" style="display:none;">
+        <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+        </div>
+    </div>
+    
+
+
+    <nav class="navbar navbar-ipdm navbar-expand-lg shadow sticky-top p-0">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><img src="../img/logo.png"/>IPDM</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../index.html" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">About</a>
+                <a href="./" class="nav-item nav-link">Courses</a>
+                <a href="#Getinstructors" class="nav-item nav-link">Our Team</a>
+                <a href="#Testimonials" class="nav-item nav-link">Testimonial</a>
+                <a href="../gallary" class="nav-item nav-link">Gallary</a>
+    
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+            </div>
+            <button class="join-now-btn" data-bs-toggle="modal" data-bs-target="#registerModal">
+                Register Now
+                <span class="arrow-circle">→</span>
+            </button>
+               
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+  <!-- Course Hero Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Courses</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Course Hero End -->
+
+
+    <!-- Add a Search Input in the Filter Section -->
+<div class="container filter-container">
+    <div class="row">
+        <!-- Category Filter -->
+        <div class="col-md-3">
+            <label for="filterCategory">Filter by Category:</label>
+            <select id="filterCategory" class="form-control">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+
+        <!-- Instructor Filter -->
+        <div class="col-md-3">
+            <label for="filterInstructor">Filter by Instructor:</label>
+            <select id="filterInstructor" class="form-control">
+                <option value="">All Instructors</option>
+            </select>
+        </div>
+
+        <!-- Price Sorting -->
+        <div class="col-md-3">
+            <label for="sortPrice">Sort by Price:</label>
+            <select id="sortPrice" class="form-control">
+                <option value="asc">Low to High</option>
+                <option value="desc">High to Low</option>
+            </select>
+        </div>
+
+        <!-- Search Input -->
+        <div class="col-md-3">
+            <label for="searchCourse">Search Courses:</label>
+            <input type="text" id="searchCourse" class="form-control" placeholder="Search by course title...">
+        </div>
+    </div>
+</div>
+
+    
+    <div id="courses-container" class="container">
+        <!-- The courses will be rendered here by JavaScript -->
+    </div>
+    <!-- Pagination Controls -->
+<nav>
+    <ul id="pagination-container" class="pagination justify-content-center">
+        <!-- Pagination items will be dynamically inserted here -->
+    </ul>
+</nav>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+       <!-- Footer Start -->
+       <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kalro Colony Allah Sha Chowk, MDA Road, Multan, Pakistan</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>061-4585013</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ipdm.com.pk</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/gallary/gallary/thumb_gallery_1.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/gallary/gallary/thumb_gallery_2.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/gallary/gallary/thumb_gallery_3.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/gallary/gallary/thumb_gallery_4.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/gallary/gallary/thumb_gallery_1.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/gallary/gallary/thumb_gallery_2.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 newsletter-section">
+                    <h4 class="newsletter">Newsletter</h4>
+                    <p>Please enter your email address to subscribe for the latest updates</p>
+                    <div class="position-relative">
+                        <input id="emailInput" class="form-control" type="text" placeholder="Your email">
+                        <button id="submitNewsletterBtn" type="button" class="btn submit-newsletter-btn">Submit</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="container sub_footer">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">www.ipdm.com.pk</a> All Right Reserved.
+
+                        <!--/*** Designed By <a class="border-bottom" href=""></a><br><br>This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        
+                      
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer End -->
+
+
+<!-- Read More Modal -->
+<div class="modal fade" id="courseDetailModal" tabindex="-1" aria-labelledby="courseDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseDetailModalLabel">Course Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="course-modal-content">
+            <!-- Course details will be injected here by JavaScript -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- Join Now Modal -->
+<div class="modal fade" id="joinNowModal" tabindex="-1" aria-labelledby="joinNowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="joinNowModalLabel">Get Registered</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Step 1: User details form -->
+          <form id="joinForm">
+            <!-- Full Name Input -->
+            <div class="mb-3">
+              <label for="studentName" class="form-label">Full Name</label>
+              <input type="text" id="studentName" class="form-control" placeholder="Enter your name" required>
+            </div>
+  
+            <!-- Contact -->
+            <div class="mb-3">
+              <label for="contactNumber" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" id="contactNumber" placeholder="Enter your Mobile Number" required>
+            </div>
+  
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+  
+            <!-- Hidden Course Name Input -->
+            <input type="hidden" id="courseName" value="">
+  
+            <button type="button" class="btn btn-primary" id="sendOtpButton">Send OTP
+
+                <div class="button-spinner" style="display:none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+
+
+            </button>
+          </form>
+
+          <div id="OtpFeedbackMessage"></div>
+  
+          <!-- Step 2: OTP Verification form (Initially hidden) -->
+          <form id="otpForm" class="mt-3" style="display: none;">
+            <div class="mb-3">
+              <label for="otp" class="form-label">Enter OTP</label>
+              <input type="text" class="form-control" id="otp" required>
+            </div>
+            <button type="button" class="btn btn-primary" id="verifyOtpButton">Verify OTP
+                <div class="button-spinner" style="display:none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </button>
+          </form>
+  
+          <!-- Step 3: Payment options (Initially hidden) -->
+          <div class="accordion mt-3" id="paymentAccordion" style="display: none;">
+            <h5>Select Payment Method</h5>
+  
+            <!-- Cash Voucher Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingVoucher">
+                <button class="accordion-button collapsed" id="submitLater" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVoucher" aria-expanded="false" aria-controls="collapseVoucher">
+                   <!-- Voucher Image -->
+                   <img src="../img/voucher.png" alt="Voucher" style="width: 80px; height: auto; margin-right:5px">
+                   <div class="button-spinner" style="display:none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                    Submit Later
+                </button>
+              </h2>
+            </div>
+  
+            <!-- JazzCash Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingJazzCash">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJazzCash" aria-expanded="false" aria-controls="collapseJazzCash">
+                    <a href="#">
+                        <img src="../img/jazzcash.png" alt="JazzCash" style="width: 80px; height: auto; margin-right:5px">
+                      </a>
+                    JazzCash
+                </button>
+              </h2>
+              <div id="collapseJazzCash" class="accordion-collapse collapse" aria-labelledby="headingJazzCash" data-bs-parent="#paymentAccordion">
+                <div class="accordion-body text-center">
+                
+                </div>
+              </div>
+            </div>
+  
+            <!-- EasyPaisa Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEasyPaisa">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEasyPaisa" aria-expanded="false" aria-controls="collapseEasyPaisa">
+                    <a href="#">
+                        <img src="../img/easypaisa.png" alt="EasyPaisa" style="width: 80px; height: auto; margin-right:5px">
+                      </a>
+                    EasyPaisa
+                </button>
+              </h2>
+              <div id="collapseEasyPaisa" class="accordion-collapse collapse" aria-labelledby="headingEasyPaisa" data-bs-parent="#paymentAccordion">
+                <div class="accordion-body text-center">
+                 
+                </div>
+              </div>
+            </div>
+  
+            <!-- HBL Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingHBL">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHBL" aria-expanded="false" aria-controls="collapseHBL">
+                    <a href="#">
+                        <img src="../img/hbl.png" alt="HBL" style="width: 80px; height: auto; margin-right:5px">
+                      </a>
+                    HBL
+                </button>
+              </h2>
+              <div id="collapseHBL" class="accordion-collapse collapse" aria-labelledby="headingHBL" data-bs-parent="#paymentAccordion">
+                <div class="accordion-body text-center">
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Get Registered</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="courseSelect" class="form-label">Select Course</label>
+                        <select class="form-select" id="courseSelect">
+                            <option selected disabled>Select a course</option>
+                        </select>
+                    </div>
+                    <div id="courseDetails" style="display:none;">
+                        <p><strong>Description:</strong> <span id="courseDescription"></span></p>
+                        <p><strong>Price:</strong> <span id="coursePrice"></span></p>
+                        <p><strong>Instructor:</strong> <span id="courseInstructor"></span></p>
+                        <p><strong>Schedule:</strong> <span id="courseSchedule"></span></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="sName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentContact" class="form-label">Contact</label>
+                        <input type="text" class="form-control" id="sContact" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="sEmail" required>
+                        <button type="button" class="btn btn-secondary mt-2" id="sendOtpBtn">Send OTP
+                            <div class="button-spinner" style="display:none;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="mb-3" id="otpSection" style="display:none;">
+                        <label for="otpInput" class="form-label">Enter OTP</label>
+                        <input type="text" class="form-control" id="otpInput" required>
+                        <button type="button" class="btn btn-primary mt-2" id="verifyOtpBtn">Verify OTP
+                            <div class="button-spinner" style="display:none;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Feedback message -->
+                    <div id="FeedbackMessage"></div>
+                    <button type="submit" class="btn btn-primary" style="display: none;">Register
+                        <div class="button-spinner" style="display:none;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+                     
+            </div>
+        </div>
+    </div>
+</div>
+
+   <!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="contactForm">
+                <div class="form-group mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    <div class="invalid-feedback" id="nameError"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    <div class="invalid-feedback" id="emailError"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="contact">Contact</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="Your Contact Number" required>
+                    <div class="invalid-feedback" id="contactError"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <div class="invalid-feedback" id="messageError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          <!-- Feedback message -->
+<div id="responseMessage"></div>
+          <hr>
+          <div class="text-center">OR</div>
+          <!-- Additional Contact Information -->
+          <div class="contact-info d-flex align-items-start flex-column gap-3">
+              <div class="d-flex align-items-center contact-item">
+                  <i class="fa fa-phone fa-lg text-primary me-2"></i>
+                  <h6>Telephone: 061-4585013</h6>
+              </div>
+              <div class="d-flex align-items-center contact-item">
+                  <i class="fab fa-whatsapp fa-lg text-success me-2"></i>
+                  <h6>
+                      <a href="https://wa.me/923467136316" target="_blank" class="text-success text-decoration-none">
+                          WhatsApp: 0346-7136316
+                      </a>
+                  </h6>
+              </div>
+              <div class="d-flex align-items-center contact-item">
+                  <i class="fa fa-map-marker-alt fa-lg text-danger me-2"></i>
+                  <h6>Address: Kalro Colony Allah Sha Chowk, MDA Road, Multan, Pakistan</h6>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Registration Receipt Modal -->
+<div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="receiptModalLabel"><img src="../img/logo.webp"/>Provisional Registration Receipt</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="receiptContent">
+              <!-- Your logo image in the HTML -->
+               <img id="logo" src="../img/logo.webp" alt="Logo" style="display: none;">
+               <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+              <p><strong>Student Name:</strong> <span id="receiptStudentName"></span></p>
+              <p><strong>Course Name:</strong> <span id="receiptCourseName"></span></p>
+              <p><strong>Email:</strong> <span id="receiptEmail"></span></p>
+              <p><strong>Contact:</strong> <span id="receiptContact"></span></p>
+              <p><strong>Voucher Number:</strong> <span id="receiptVoucherNumber"></span></p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn closereceipt" data-bs-dismiss="modal">
+                  <i class="fas fa-times-circle"></i> Close
+              </button>
+              <button type="button" class="btn pdfreceipt" id="downloadReceipt">
+                  <i class="fas fa-file-pdf"></i> Download PDF
+              </button>
+              <button type="button" class="btn printreceipt" id="printReceipt">
+                  <i class="fas fa-print"></i> Print
+              </button>
+              
+          </div>
+      </div>
+  </div>
+</div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="../js/courses.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <script>
+   
+</script>
+</body>
+
+</html>

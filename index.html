@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>IPDM</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo.webp" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+
+/*--------------------------------------------------------------
+# Clients Section
+--------------------------------------------------------------*/
+.clients {
+  padding: 0 0 60px 0;
+}
+
+.clients .swiper-slide img {
+  opacity: 0.5;
+  transition: 0.3s;
+  filter: grayscale(100);
+}
+
+.clients .swiper-slide img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+
+.testimonial-carousel .owl-dot.active {
+    background: #d67a61;
+    border-color: #fff;
+}
+
+
+</style>
+<body>
+  
+ <!-- Spinner Start -->
+<div id="spinner-overlay">
+    <div class="spinner-border" role="status">
+    </div>
+</div>
+<!-- Spinner End -->
+
+
+
+
+    <nav class="navbar navbar-ipdm navbar-expand-lg shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><img src="img/logo.png"/>IPDM</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">About</a>
+                <a href="courses" class="nav-item nav-link">Courses</a>
+                <a href="#Getinstructors" class="nav-item nav-link">Our Team</a>
+                <a href="#Testimonials" class="nav-item nav-link">Testimonial</a>
+                <a href="gallary/" class="nav-item nav-link">Gallary</a>
+    
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+            </div>
+            <button class="join-now-btn" data-bs-toggle="modal" data-bs-target="#registerModal">
+                Register Now
+                <span class="arrow-circle">→</span>
+            </button>
+               
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/gallary/hero/hero_1.webp" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, 0.623);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated fadeInUp">Skills Oriented Best Courses</h5>
+                                <h1 class="display-3 animated fadeInUp">
+                                    <span class="text-color1">The Best</span> 
+                                    <span class="text-color2">Learning Platform</span>
+                                </h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Explore our top-tier, skills-oriented courses designed to catapult your career to new heights!</p>
+                                <a href="#" class="btn btn-primary read-more-btn py-md-3 px-md-5 me-3 animated slideInLeft">
+                                    <i class="fas fa-book-open me-2"></i> Read More
+                                </a>
+                                <a href="#" class="btn btn-light register-btn py-md-3 px-md-5 animated slideInRight" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                    Register Now <span class="register-icon"><i class="fas fa-arrow-right"></i></span>
+                                </a>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/gallary/hero/hero_2.webp" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Train & Transform</h5>
+
+                                <h1 class="display-3 animated fadeInUp">
+                                    <span class="text-color1">We Transform &
+                                        Prepare you</span> 
+                                    <span class="text-color2">for the
+                                        next Destination</span>
+                                </h1>
+                               
+                                <p class="fs-5 text-white mb-4 pb-2">Transform and prepare for your next destination with us—your journey to success starts here!</p>
+                                <a href="#" class="btn btn-primary read-more-btn py-md-3 px-md-5 me-3 animated slideInLeft">
+                                    <i class="fas fa-book-open me-2"></i> Read More
+                                </a>
+                                <a href="#" class="btn btn-light register-btn py-md-3 px-md-5 animated slideInRight" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                    Register Now <span class="register-icon"><i class="fas fa-arrow-right"></i></span>
+                                </a>    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+   
+
+    <section class="vision_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="latest_blog_carousel">
+                         <div class="single_item single_item_first">
+                            <div class="blog-img">
+                                <!--  <a href="#"><img src="img/gallary/vision/vision_1.webp" alt="" class="img-fluid"></a>-->
+                            </div>
+                            <div class="blog_title">
+                                <span>Our</span>  
+                                <h3><a href="#" title="">Vision</a></h3> 
+                                <p>To Share the Real Philosophy of Successful Life</p>                    
+                            </div>   
+                        </div>
+    
+                        <div class="single_item single_item_center">
+                            <div class="blog-img">
+                                <!--  <a href="#" title=""><img src="img/gallary/vision/vision_2.webp" alt="" class="img-fluid"></a>-->
+                            </div>
+                            <div class="blog_title">
+                                <span>Our</span>  
+                                <h3><a href="#" title="">Mission</a></h3> 
+                                <p>To groom the personalities in a way that
+                                    will be able to unleash the strength and
+                                    hidden talent. Our mission is to develop blueprint
+                                    for desired result and strategies to
+                                    achieve massive success in Life.<p>                    
+                            </div>   
+                        </div>
+    
+                       <div class="single_item single_item_last">
+                            <div class="blog-img">
+                                 <!-- <a href="#" title=""><img src="img/gallary/vision/vision_3.webp" alt="" class="img-fluid"></a>-->
+                            </div>
+                            <div class="blog_title">
+                                <span>Our</span>  
+                                <h3><a href="#" title="">Values</a></h3> 
+                                 <p>Accountability,
+                                    Character,
+                                    Integrity,
+                                    Respect,
+                                    Quality<p>  
+                            </div>   
+                        </div>
+    
+                    </div>
+                </div>             
+            </div>
+        </div>
+    </section><!-- End Popular Courses Highlight -->
+   
+    <!-- About Start -->
+    <div class="container-xxl py-5 my-5 shadow aboutus">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative image-container h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/gallary/welcome/welcome_1.webp" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-info pe-3">About Us</h6>
+                    <h4><i class="fas fa-star text-info"></i> Welcome to</h4>
+                    <h2 class="mb-2" style="font-size:30px">Institute of Personal Development, Multan</h2>
+                    <p class="mb-4">A state of the art Institution for capacity building and professioal skills enhancement.</p>
+                    <p class="mb-4">To train Pakistani Youth to fulfill the gap between the Academia and Industry.</p>
+                    <p class="mb-4">A purposeful building with renowned professional faculty.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-2"><i class="fas fa-chalkboard-teacher text-info me-2"></i>Professional Faculty</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-2"><i class="fas fa-users text-info me-2"></i>In-Person Classes</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-2"><i class="fas fa-laptop text-info me-2"></i>Online Classes</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-2"><i class="fas fa-certificate text-info me-2"></i>Duke Skills</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-2"><i class="fas fa-chart-line text-info me-2"></i>Capacity Building</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-2"><i class="fas fa-award text-info me-2"></i>Certification</p>
+                        </div>
+                    </div>
+                    <a class="btn read-more-btn py-3 px-5 mt-2" href="#">
+                        <i class="fas fa-book-open me-2"></i> Read More
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+<!-- About extended Start -->
+<div class="container-fluid py-5 about_extended">
+    <div class="container-fluid">
+        <div class="row g-4">
+            <!-- Expert Instructors -->
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="extended_item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-chalkboard-teacher text-primary mb-4"></i>
+                        <h5 class="mb-3">Professional Faculty</h5>
+                        <p>Our instructors are industry experts, bringing real-world experience and cutting-edge techniques to every class.
+                            Dedicated to excellence, our skilled instructors empower students with practical knowledge and hands-on training.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Skills Oriented Courses -->
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="extended_item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-cogs text-primary mb-4"></i>
+                        <h5 class="mb-3">Skills Oriented Courses</h5>
+                        <p>Unlock your potential with our skills-oriented courses designed to equip you with industry-relevant expertise for immediate application.
+                            Transform theory into practice with courses focused on real-world skills, preparing you for success in today’s dynamic job market.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Capacity Building -->
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="extended_item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-chart-line text-primary mb-4"></i>
+                        <h5 class="mb-3">Capacity Building</h5>
+                        <p>Accelerate your career with our specialized programs that are designed to bridge the gap between your current skills and the demands of the job market.
+                            Step up in your professional life with courses that not only polish your existing skills but also introduce you to the latest industry trends and technologies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Duke Skills -->
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="extended_item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                        <h5 class="mb-3">Duke Skills</h5>
+                        <p>Duke Skills empowers learners with cutting-edge tools and techniques, setting the standard for industry-relevant training.
+                            Experience learning that drives success—Duke Skills delivers practical knowledge and skills that are pivotal in today’s competitive landscape.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About extended End -->
+
+
+
+<div class="container-xxl py-5 category-section">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
+            <h1 class="mb-5">Courses Categories</h1>
+        </div>
+
+        <!-- Owl Carousel Container with Unique ID -->
+        <div class="owl-carousel owl-theme" id="categories-carousel">
+            <!-- Slides will be dynamically injected here -->
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+                <h1 class="mb-5">Popular Courses</h1>
+            </div>
+    
+            <!-- Swiper Container for Courses -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="courses-container">
+                    <!-- Courses will be injected here -->
+                </div>
+                <!-- Add Pagination and Navigation controls -->
+                <div class="swiper-pagination"></div> <!-- Square pagination will show here -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+
+
+        </div>
+    </div> 
+    <!-- Courses End -->
+    
+
+     <!-- Events Start -->
+    <section class="events-area" id="events-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="event_title_wrapper">  
+                        <div class="sub_title">
+                            <h2>Our Upcoming Sessions</h2>
+                            <p>Unlock new skills and discover exciting opportunities in our upcoming sessions designed to propel your personal and professional growth!</p>  
+                        </div>
+                       <!--  <div class="envent_all_view">
+                            <a href="#" class="view-all-link" title="View all items">
+                                View All <i class="fas fa-arrow-right"></i>
+                            </a>
+                            
+                        </div>-->
+                    </div> 
+                </div>
+            </div>
+            <div class="row" id="events-list"></div>
+        </div>
+    </section>
+
+     <!-- Events End -->
+
+    <!-- Team Start -->
+  
+    <div class="container-xxl py-5 instructors">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
+                <h1 class="mb-5">Expert Instructors</h1>
+            </div>
+            <div class="row g-4 Getinstructors" id="Getinstructors">
+                <!-- Instructors will be injected here dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+                <h1 class="mb-5">Our Students Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative" id="Testimonials">
+                <!-- Testimonials will be injected here dynamically -->
+            </div>
+        </div>
+    </div>
+    
+<!-- Testimonial End -->
+
+ <!-- ======= Clients Section ======= -->
+ <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Joint Venture</h6>
+            <h1 class="mb-5">Our Partners</h1>
+ <section id="clients" class="clients">
+    <div class="container" data-aos="zoom-out">
+
+      <div class="clients-slider swiper">
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide"><img src="img/clients/Test Master.webp" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="img/clients/famz.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="img/clients/evolvx.png" class="img-fluid" alt=""></div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Clients Section -->
+  </div></div></div>
+
+    
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kalro Colony Allah Sha Chowk, MDA Road, Multan, Pakistan</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>061-4585013</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ipdm.com.pk</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/gallary/gallary/thumb_gallery_1.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/gallary/gallary/thumb_gallery_2.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/gallary/gallary/thumb_gallery_3.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/gallary/gallary/thumb_gallery_4.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/gallary/gallary/thumb_gallery_5.webp" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/gallary/gallary/thumb_gallery_6.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 newsletter-section">
+                    <h4 class="newsletter">Newsletter</h4>
+                    <p>Please enter your email address to subscribe for the latest updates</p>
+                    <div class="position-relative">
+                        <input id="emailInput" class="form-control" type="text" placeholder="Your email">
+                        <button id="submitNewsletterBtn" type="button" class="btn submit-newsletter-btn">Submit</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="container sub_footer">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">www.ipdm.com.pk</a> All Right Reserved.
+
+                        <!--/*** Designed By <a class="border-bottom" href=""></a><br><br>This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        
+                      
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+ <!-- Join Now Modal -->
+<div class="modal fade" id="joinNowModal" tabindex="-1" aria-labelledby="joinNowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="joinNowModalLabel">Get Registered</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Step 1: User details form -->
+          <form id="joinForm">
+            <!-- Full Name Input -->
+            <div class="mb-3">
+              <label for="studentName" class="form-label">Full Name</label>
+              <input type="text" id="studentName" class="form-control" placeholder="Enter your name" required>
+            </div>
+  
+            <!-- Contact -->
+            <div class="mb-3">
+              <label for="contactNumber" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" id="contactNumber" placeholder="Enter your Mobile Number" required>
+            </div>
+  
+            <!-- Email Input -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+  
+            <!-- Hidden Course Name Input -->
+            <input type="hidden" id="courseName" value="">
+  
+            <button type="button" class="btn btn-primary" id="sendOtpButton">Send OTP
+
+                <div class="button-spinner" style="display:none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+
+
+            </button>
+          </form>
+
+          <div id="OtpFeedbackMessage"></div>
+  
+          <!-- Step 2: OTP Verification form (Initially hidden) -->
+          <form id="otpForm" class="mt-3" style="display: none;">
+            <div class="mb-3">
+              <label for="otp" class="form-label">Enter OTP</label>
+              <input type="text" class="form-control" id="otp" required>
+            </div>
+            <button type="button" class="btn btn-primary" id="verifyOtpButton">Verify OTP
+                <div class="button-spinner" style="display:none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </button>
+          </form>
+  
+          <!-- Step 3: Payment options (Initially hidden) -->
+          <div class="accordion mt-3" id="paymentAccordion" style="display: none;">
+            <h5>Select Payment Method</h5>
+  
+            <!-- Cash Voucher Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingVoucher">
+                <button class="accordion-button collapsed" id="submitLater" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVoucher" aria-expanded="false" aria-controls="collapseVoucher">
+                   <!-- Voucher Image -->
+                   <img src="img/voucher.png" alt="Voucher" style="width: 80px; height: auto; margin-right:5px">
+                   <div class="button-spinner" style="display:none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                    Submit Later
+                </button>
+              </h2>
+            </div>
+  
+            <!-- JazzCash Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingJazzCash">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJazzCash" aria-expanded="false" aria-controls="collapseJazzCash">
+                    <a href="#">
+                        <img src="img/jazzcash.png" alt="JazzCash" style="width: 80px; height: auto; margin-right:5px">
+                      </a>
+                    JazzCash
+                </button>
+              </h2>
+              <div id="collapseJazzCash" class="accordion-collapse collapse" aria-labelledby="headingJazzCash" data-bs-parent="#paymentAccordion">
+                <div class="accordion-body text-center">
+                
+                </div>
+              </div>
+            </div>
+  
+            <!-- EasyPaisa Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEasyPaisa">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEasyPaisa" aria-expanded="false" aria-controls="collapseEasyPaisa">
+                    <a href="#">
+                        <img src="img/easypaisa.png" alt="EasyPaisa" style="width: 80px; height: auto; margin-right:5px">
+                      </a>
+                    EasyPaisa
+                </button>
+              </h2>
+              <div id="collapseEasyPaisa" class="accordion-collapse collapse" aria-labelledby="headingEasyPaisa" data-bs-parent="#paymentAccordion">
+                <div class="accordion-body text-center">
+                 
+                </div>
+              </div>
+            </div>
+  
+            <!-- HBL Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingHBL">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHBL" aria-expanded="false" aria-controls="collapseHBL">
+                    <a href="#">
+                        <img src="img/hbl.png" alt="HBL" style="width: 80px; height: auto; margin-right:5px">
+                      </a>
+                    HBL
+                </button>
+              </h2>
+              <div id="collapseHBL" class="accordion-collapse collapse" aria-labelledby="headingHBL" data-bs-parent="#paymentAccordion">
+                <div class="accordion-body text-center">
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+
+ <!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="contactForm">
+                <div class="form-group mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    <div class="invalid-feedback" id="nameError"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    <div class="invalid-feedback" id="emailError"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="contact">Contact</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="Your Contact Number" required>
+                    <div class="invalid-feedback" id="contactError"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <div class="invalid-feedback" id="messageError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          <!-- Feedback message -->
+<div id="responseMessage"></div>
+          <hr>
+          <div class="text-center">OR</div>
+          <!-- Additional Contact Information -->
+          <div class="contact-info d-flex align-items-start flex-column gap-3">
+              <div class="d-flex align-items-center contact-item">
+                  <i class="fa fa-phone fa-lg text-primary me-2"></i>
+                  <h6>Telephone: 061-4585013</h6>
+              </div>
+              <div class="d-flex align-items-center contact-item">
+                  <i class="fab fa-whatsapp fa-lg text-success me-2"></i>
+                  <h6>
+                      <a href="https://wa.me/923467136316" target="_blank" class="text-success text-decoration-none">
+                          WhatsApp: 0346-7136316
+                      </a>
+                  </h6>
+              </div>
+              <div class="d-flex align-items-center contact-item">
+                  <i class="fa fa-map-marker-alt fa-lg text-danger me-2"></i>
+                  <h6>Address: Kalro Colony Allah Sha Chowk, MDA Road, Multan, Pakistan</h6>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Structure -->
+<div id="categoryModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modal-category-name">Category Name</h2>
+        <p><i class="fas fa-list"></i> Total Courses: <span id="modal-course-count"></span></p>
+
+        <h3><i class="fas fa-book"></i> Courses</h3>
+        <table id="modal-courses-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Schedule</th>
+                    <th>Batch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Course details will be populated here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Get Registered</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="courseSelect" class="form-label">Select Course</label>
+                        <select class="form-select" id="courseSelect">
+                            <option selected disabled>Select a course</option>
+                        </select>
+                    </div>
+                    <div id="courseDetails" style="display:none;">
+                        <p><strong>Description:</strong> <span id="courseDescription"></span></p>
+                        <p><strong>Price:</strong> <span id="coursePrice"></span></p>
+                        <p><strong>Instructor:</strong> <span id="courseInstructor"></span></p>
+                        <p><strong>Schedule:</strong> <span id="courseSchedule"></span></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="sName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentContact" class="form-label">Contact</label>
+                        <input type="text" class="form-control" id="sContact" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="sEmail" required>
+                        <button type="button" class="btn btn-secondary mt-2" id="sendOtpBtn">Send OTP
+                            <div class="button-spinner" style="display:none;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="mb-3" id="otpSection" style="display:none;">
+                        <label for="otpInput" class="form-label">Enter OTP</label>
+                        <input type="text" class="form-control" id="otpInput" required>
+                        <button type="button" class="btn btn-primary mt-2" id="verifyOtpBtn">Verify OTP
+                            <div class="button-spinner" style="display:none;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Feedback message -->
+                    <div id="FeedbackMessage"></div>
+                    <button type="submit" class="btn btn-primary" style="display: none;">Register
+                        <div class="button-spinner" style="display:none;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+                     
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Registration Receipt Modal -->
+<div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="receiptModalLabel"><img src="img/logo.webp"/>Provisional Registration Receipt</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="receiptContent">
+                <!-- Your logo image in the HTML -->
+                 <img id="logo" src="img/logo.webp" alt="Logo" style="display: none;">
+                 <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+                <p><strong>Student Name:</strong> <span id="receiptStudentName"></span></p>
+                <p><strong>Course Name:</strong> <span id="receiptCourseName"></span></p>
+                <p><strong>Email:</strong> <span id="receiptEmail"></span></p>
+                <p><strong>Contact:</strong> <span id="receiptContact"></span></p>
+                <p><strong>Voucher Number:</strong> <span id="receiptVoucherNumber"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn closereceipt" data-bs-dismiss="modal">
+                    <i class="fas fa-times-circle"></i> Close
+                </button>
+                <button type="button" class="btn pdfreceipt" id="downloadReceipt">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </button>
+                <button type="button" class="btn printreceipt" id="printReceipt">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+     /**
+   * Clients Slider
+   */
+  new Swiper('.clients-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 80
+      },
+      992: {
+        slidesPerView: 6,
+        spaceBetween: 120
+      }
+    }
+  });
+        
+
+</script>
+</body>
+
+</html>

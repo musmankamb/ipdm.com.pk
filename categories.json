@@ -1,0 +1,28 @@
+{
+    "categories": [
+        {
+            "name": "Personal Development",
+            "course_count": 14
+        },
+        {
+            "name": "Career & Job Preparation",
+            "course_count": 10
+        },
+        {
+            "name": "Communication & Soft Skills",
+            "course_count": 9
+        },
+        {
+            "name": "Technical Skills",
+            "course_count": 22
+        },
+        {
+            "name": "Freelancing & Online Business",
+            "course_count": 11
+        },
+        {
+            "name": "Web Development & Design",
+            "course_count": 10
+        }
+    ]
+}

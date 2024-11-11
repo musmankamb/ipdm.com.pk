@@ -1,0 +1,2310 @@
+/********** Template CSS **********/
+:root {
+    --primary: #e49f8d;
+    --light: #dbdbdb;
+    --dark: #2F3645;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/* Spinner Overlay */
+#spinner-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Light transparent white overlay */
+    z-index: 1050; /* Make sure it appears above other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Spinner Style */
+.spinner-border {
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.5rem;
+    color: #fc9b40; 
+    animation: spin 1.2s linear infinite; /* Custom animation */
+}
+
+/* Optional: Custom Animation for Spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+/* Button Spinner (separate from the global spinner) */
+.button-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 0.2em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-spin 0.75s linear infinite;
+    vertical-align: middle;
+    margin-left: 8px;  /* Space between button text and spinner */
+    border-width: 0.3rem;
+    color: #fff563; 
+   
+}
+
+@keyframes button-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Optional: Disable button style */
+button[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/*** Button  ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    border-radius: 80px;
+   
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+    
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+
+
+ /*** Navbar ***/
+ .navbar {
+    background-color: #2F3645;
+ }
+ .navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-ipdm .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #2F3645;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-ipdm .navbar-nav .nav-link:hover,
+.navbar-ipdm .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-ipdm .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-ipdm .navbar-nav {
+        border-top: 1px solid #2F3645;
+    }
+}
+
+.navbar-ipdm .navbar-brand,
+.navbar-ipdm a.btn {
+    height: 75px;
+}
+
+.navbar-ipdm .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-ipdm.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+/* Dropdown menu fade-down */
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+
+    /* Submenu CSS */
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+    }
+
+    /* Show subdropdown on hover */
+    .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Align submenu properly */
+    .navbar .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+        transition: all .5s ease;
+    }
+}
+
+/* Styling the navbar-toggler button */
+.navbar-toggler {
+    background-color: #ffaeae; /* Make the button background black */
+    border: none; /* Remove the default border */
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Customize the navbar-toggler icon */
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox%3D%220 0 30 30%22 xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath stroke%3D%22rgba%280%2C%200%2C%200%2C%201%29%22 stroke-width%3D%222%22 stroke-linecap%3D%22round%22 stroke-miterlimit%3D%2210%22 d%3D%22M4 7h22M4 15h22M4 23h22%22/%3E%3C/svg%3E');
+}
+
+/* Hover effect to make the button slightly lighter */
+.navbar-toggler:hover {
+    background-color: #e9d2d2; /* Lighter black on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .navbar-toggler {
+        padding: 0.4rem 0.9rem; /* Adjust padding for tablets */
+    }
+
+    .navbar-toggler-icon {
+        width: 25px; /* Reduce the size of the icon for smaller screens */
+        height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        padding: 0.3rem 0.8rem; /* Further reduce padding for smaller devices */
+    }
+
+    .navbar-toggler-icon {
+        width: 22px; /* Smaller icon for mobile */
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-toggler {
+        padding: 0.2rem 0.7rem; /* Smallest padding for mobile */
+    }
+
+    .navbar-toggler-icon {
+        width: 20px; /* Smallest icon size for mobile */
+        height: 20px;
+    }
+}
+
+
+/*** Header carousel ***/
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        min-height: 500px;
+    }
+    
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    margin: 7px 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    background: transparent;
+    border: 1px solid #030303;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-header {
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/carousel-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header-inner {
+    background: rgba(15, 23, 43, .7);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+
+/*** Service ***/
+.service-item {
+    background: var(--light);
+    transition: .5s;
+}
+
+.service-item:hover {
+    margin-top: -10px;
+    background: var(--primary);
+}
+
+.service-item * {
+    transition: .5s;
+}
+
+.service-item:hover * {
+    color: var(--light) !important;
+}
+
+
+/*** Categories & Courses.category img,
+.course-item img {
+    transition: .5s;
+}
+
+.category a:hover img,
+.course-item:hover img {
+    transform: scale(1.1);
+}
+ ***/
+
+
+/*** Team ***/
+.team-item img {
+    transition: .5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, rgb(238, 217, 217) 0%, rgba(255, 255, 255, 0.486) 100%);
+    z-index: 1;
+}
+
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
+
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: #FFFFFF !important;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+   
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000000;
+    transition: .5s;
+    background-color: #070707d5;
+}
+
+
+.testimonial-carousel .owl-dot.active {
+    background: #d67a61;
+    border-color: #fff;
+}
+
+.accordion-button {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+.accordion-button:not(.collapsed) {
+    border-color: var(--primary);
+    color: #2F3645;
+}
+
+.accordion-body {
+    border-color: var(--light);
+    padding: 20px;
+}
+
+
+
+
+.payment-option img {
+    transition: transform 0.3s ease;
+}
+
+.payment-option img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    cursor: pointer;
+}
+
+
+
+/* Align the course name (cname) to the left and set background color */
+.cname-left {
+text-align: left;
+background-color: #2F3645; /* Optional background color */
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 0; /* Remove bottom margin for better alignment */
+flex-grow: 1; /* Let the name take available space */
+color: #f8f9fa;
+max-width: 250px;
+width: 100%;
+}
+
+.price-circle {
+background-color: #e49f8d;
+color: #fff;
+width: 80px;
+height: 80px;
+border-radius: 50%; /* Make it a circle */
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1rem;
+font-weight: bold;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+
+.d-flex {
+display: flex;
+justify-content: space-between; /* Push cname to the left and price to the right */
+align-items: center; /* Vertically center them */
+}
+
+
+/* Custom styles for Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+color: #2F3645; /* Visible color for buttons */
+background-color: rgba(255, 255, 255, 0.685); /* Light background */
+width: 60px;
+height: 60px;
+border-radius: 50%; /* Make them circular */
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+z-index: 10; /* Ensure they appear on top */
+top: 50%; /* Vertically center the buttons */
+transform: translateY(-50%);
+position: absolute; /* Ensure buttons are placed correctly */
+}
+
+/* Position the next button to the right */
+.swiper-button-next {
+right: 5px;
+z-index: 999;
+}
+
+/* Position the previous button to the left */
+.swiper-button-prev {
+left: 5px;
+z-index: 999;
+}
+
+/* Optional: Add hover effects */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+background-color: #e49f8d; /* Change to primary color on hover */
+color: #fff;
+}
+/* Ensure the swiper container doesn't overflow the viewport */
+.swiper-container {
+width: 100%;
+height: auto;
+overflow: hidden; /* Prevent any content from overflowing */
+position: relative;
+margin: 0 auto; /* Center the container */
+padding-bottom: 40px; /* Add space for navigation and pagination */
+}
+
+/* Prevent overflow from the swiper slides */
+.swiper-slide {
+display: flex;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;
+max-width: 100%; /* Ensure slides don't overflow */
+}
+
+
+
+
+      /* Modal Styles */
+.modal-content {
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header, .modal-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.modal-header h5 {
+font-weight: bold;
+}
+
+.modal-body {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+.form-group label {
+font-weight: 500;
+margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+border: 1px solid #ddd;
+border-radius: 5px;
+padding: 10px;
+font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+border-color: #e49f8d;
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.modal-footer button {
+padding: 10px 20px;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.modal-footer .btn-primary {
+background-color: #e49f8d;
+border-color: #e0dcdb;
+}
+
+.modal-footer .btn-primary:hover {
+background-color: #2F3645;
+border-color: #2F3645;
+}
+
+/* Contact Item Background and Styling */
+.contact-item {
+background-color: #dbdbdb;  /* Light grey background */
+border-radius: 10px;        /* Rounded corners */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+transition: background-color 0.3s ease;   /* Smooth hover transition */
+padding: 10px;
+
+}
+
+/* Hover effect to change background color */
+.contact-item:hover {
+background-color: #e49f8d;  /* Darker grey on hover */
+
+}
+
+/* Ensuring consistent layout with icon and text alignment */
+.contact-item i {
+min-width: 30px;
+font-size: 20px;
+
+}
+
+/* Flexbox for Contact Info */
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 10px; /* Space between items */
+
+}
+
+.contact-info .d-flex {
+align-items: center;
+}
+
+/* Link hover effect */
+.contact-info a:hover {
+text-decoration: underline;
+}
+
+
+
+/*=======[ Up Comming Events ]========*/
+.events-area {
+background: #ffffff;
+padding: 100px 0;
+}
+
+.events-area .event_title_wrapper {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+margin: 0px 0 60px; 
+}
+
+.events-area .event_title_wrapper .sub_title {
+  margin: 0px;
+  text-align: left; 
+}
+
+  .events-area .event_title_wrapper .sub_title p {
+    padding: 25px 10% 0 0; 
+}
+
+.events-area .events_full_box {
+        margin-bottom: 50px;
+        background: linear-gradient(135deg, #ffffff, #f0f8ff); /* light gradient from white to a light blue */
+       
+    }
+    
+.events-area .events_full_box:last-child {
+  margin-bottom: 0px; 
+}
+.events-area .events_single_left .event_info {
+width: 60%;
+padding: 45px 30px 45px 90px !important; 
+}
+.events-area .events_single_left .event_date {
+left: 0; 
+}
+
+.events-area .events_single {
+position: relative;
+min-height: 280px;
+-webkit-box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.05);
+        box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.05);
+-webkit-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center; 
+    }
+
+.events-area .events_single:hover {
+  -webkit-box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.1);
+          box-shadow: 0px 0px 81px 0px rgba(47, 47, 47, 0.1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; 
+}
+
+.events-area .events_single .event_banner {
+  width: 44%; 
+}
+
+  .events-area .events_single .event_banner img {
+    width: 100%; 
+}
+
+.events-area .events_single .event_info {
+  width: 60%;
+  padding: 45px 30px 45px 70px; 
+}
+
+  .events-area .events_single .event_info h3 {
+    line-height: 36px; 
+}
+
+    .events-area .events_single .event_info h3 a {
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      font-weight: 700;
+      color: #333146;
+      font-size: 25px; 
+    }
+
+      .events-area .events_single .event_info h3 a:hover {
+        color: #ff5a2c; 
+    }
+
+  .events-area .events_single .event_info .events_time {
+    padding: 25px 0 30px; 
+}
+
+    .events-area .events_single .event_info .events_time span {
+      color: #333146;
+      font-size: 15px;
+      margin-right: 25px; 
+    }
+
+      .events-area .events_single .event_info .events_time span i {
+        padding-right: 10px;
+        color: #092ace;
+        font-size: 16px; 
+    }
+
+        .events-area .events_single .event_info .events_time span i:before {
+          margin: 0;
+          font-size: 13px;
+          font-weight: 700; 
+        }
+
+    .events-area .events_single .event_info .events_time .time {
+      text-transform: uppercase; 
+    }
+
+  .events-area .events_single .event_info p {
+    margin: 0;
+    font-size: 15px;
+    color: #6a7a83; 
+}
+
+.events-area .events_single .event_date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ff5a2c;
+  height: auto;
+  width: 80px;
+  padding: 10px;
+  text-align: center; 
+}
+
+  .events-area .events_single .event_date span {
+    display: inherit;
+    color: #ffffff;
+    line-height: 20px;
+    font-size: 15px;
+ }
+  .events-area .events_single .event_date .date {
+    font-size: 20px;
+    font-weight: 600;
+   }
+    .flipped {
+flex-direction: row-reverse;
+}
+/* Right side by default */
+.event_date.date-right {
+right: 0;
+left: auto;
+}
+
+/* Move date to the left for flipped items */
+.event_date.date-left {
+left: 0;
+right: auto;
+}
+
+
+/* Small devices (phones, less than 600px) */
+@media (max-width: 600px) {
+    .events-area {
+      padding: 50px 0;
+    }
+  
+    .events-area .event_title_wrapper {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+  
+    .events-area .event_title_wrapper .sub_title p {
+      padding: 10px 0;
+    }
+  
+    .events-area .events_single {
+      flex-direction: column;
+      min-height: auto;
+    }
+  
+    .events-area .events_single .event_banner {
+      width: 100%;
+    }
+  
+    .events-area .events_single .event_info {
+      width: 100%;
+      padding: 30px;
+    }
+  
+    .events-area .events_single .event_date {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .events-area .events_single .event_date span {
+      font-size: 18px;
+    }
+  
+    .events-area .events_single .event_info h3 a {
+      font-size: 20px;
+    }
+  
+    .events-area .events_single .event_info .events_time span {
+      font-size: 14px;
+    }
+  }
+  
+  /* Medium devices (tablets, 600px - 900px) */
+  @media (min-width: 600px) and (max-width: 900px) {
+    .events-area .event_title_wrapper {
+      margin-bottom: 40px;
+    }
+  
+    .events-area .events_single {
+      flex-direction: row;
+    }
+  
+    .events-area .events_single .event_banner {
+      width: 50%;
+    }
+  
+    .events-area .events_single .event_info {
+      width: 50%;
+      padding: 40px;
+    }
+  
+    .events-area .events_single .event_info h3 a {
+      font-size: 22px;
+    }
+  
+    .events-area .events_single .event_info .events_time span {
+      font-size: 14px;
+    }
+  }
+  
+  /* Large devices (desktops, 900px and up) */
+  @media (min-width: 900px) {
+    .events-area .event_title_wrapper {
+      margin-bottom: 60px;
+    }
+  
+   
+  
+    .events-area .events_single .event_banner {
+      width: 44%;
+    }
+  
+    .events-area .events_single .event_info {
+      width: 60%;
+      padding: 45px 30px 45px 70px;
+    }
+  
+    .events-area .events_single .event_info h3 a {
+      font-size: 25px;
+    }
+  }
+/*** Footer ***/
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-weight: normal;
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+
+
+/* Custom style for the calendar input */
+#scheduleDate {
+    border: 2px solid #e49f8d;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+
+.join-now-btn {
+    background-color: #ff6347; /* Button background color */
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative; /* To position arrow */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and arrow */
+}
+
+.join-now-btn .arrow-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* White circle */
+    color: #ff6347; /* Arrow color */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.join-now-btn:hover {
+    background-color: #ff4500; /* Change button color on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.join-now-btn:hover .arrow-circle {
+    background-color: #000000; /* Change arrow circle background on hover */
+    color: white; /* Change arrow color on hover */
+    transform: translateX(5px); /* Animate arrow movement */
+}
+
+.navbar {
+background-color: #ffffff;
+}
+
+.image-container {
+    position: relative;
+    width: 100%; /* Adjust the width as per your requirement */
+    height: 100%; /* Adjust the height as per your requirement */
+}
+
+.image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 5px solid white; /* White border around the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect for depth */
+}
+
+
+/* Services Section Styles */
+.about_extended {
+    background-color: rgb(255, 247, 220);
+    margin-top: 70px;  /* Custom top margin */
+    margin-bottom: 70px;  /* Custom bottom margin */
+}
+
+/* Individual Service Item */
+.extended_item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Shadow around each service item */
+   max-height: 360px;
+   height: 100%;
+  
+}
+
+/* Service item hover effect */
+.extended_item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);  /* Stronger shadow on hover */
+    transform: translateY(-5px);  /* Lift the service item slightly */
+    background-color:#fd7b4b;
+    color:#fff;
+}
+
+/* Icon Styling .services .service-item:hover{
+background-color:#ff4500
+} 
+
+*/
+
+/* Service Title */
+.extended_item h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Service Description */
+.extended_item p {
+    font-size: 16px;
+    color: #414141;
+    line-height: 1.6;
+}
+
+.extended_item p:hover {
+    color: #fff;
+}
+.extended_item i:hover {
+    color: #faf9f9;  /* Icon color */
+}
+
+
+   /* Container for categories */
+   .category {
+    padding: 50px 0; /* Adjust padding for top and bottom of the section */
+}
+
+/* Masonry-style grid */
+#categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Responsive columns */
+    grid-auto-rows: auto; /* Allow rows to grow naturally */
+    gap: 2px; /* Small gap between items */
+}
+
+/* Grid items for category images */
+.category-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/* Ensure images fill the container but keep aspect ratio */
+.category img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Position text container at the bottom of each image */
+.category .text-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    text-align: center;
+    padding: 10px;
+}
+
+.text-container h5 {
+        font-size: 20px; /* Smaller font size on mobile */
+        color: #000000;
+    }
+    .text-container small {
+        font-size: 22px;
+        color: #f11d1d;
+        font-weight: 500;
+    }
+
+   /* Hover effect for text: Change color of h5 and small to white on hover */
+.category-item:hover .text-container h5 {
+color: #ffffff; /* White color on hover */
+}
+
+.category-item:hover .text-container small {
+color: #f6ff73; /* White color on hover */
+}
+
+
+/* Hover effect for images */
+.category-item:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for text */
+.category-item:hover .text-container {
+    background-color: rgba(49, 48, 48, 0.521);
+    transform: translateY(-5px);
+    color: #fff; /* Change text to white on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+/* Style for the "View Details" button */
+.view-details-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff733c;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+.view-details-btn:hover {
+    background-color: #ffffff; /* Darker blue on hover */
+    transform: translateY(-3px); /* Lift button slightly */
+    color: #000000;
+}
+
+/* Style for the course count and icon */
+.count {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.count i {
+    margin-right: 5px;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #categories-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Full-width items on mobile */
+        gap: 1px; /* Adjust gap for smaller screens */
+    }
+
+    .text-container h5 {
+        font-size: 18px; /* Smaller font size on mobile */
+    }
+
+    .text-container small {
+        font-size: 12px;
+    }
+
+    .category img {
+        max-height: 300px; /* Prevent images from becoming too large on mobile */
+    }
+}
+
+/* Modal styles */
+#categoryModal {
+display: none; /* Initially hidden */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000; /* Ensures the modal is on top */
+}
+
+#categoryModal .modal-content {
+background-color: #fff;
+padding: 30px;
+border-radius: 8px;
+width: 90%;
+max-width: 800px; /* Sets maximum width */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+position: relative;
+animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal fade-in animation */
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: scale(0.9);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+/* Close button (X) */
+#categoryModal .close-modal {
+position: absolute;
+top: 10px;
+right: 20px;
+font-size: 24px;
+font-weight: bold;
+color: #333;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+#categoryModal .close-modal:hover {
+color: #e49f8d; /* Changes color on hover */
+}
+
+/* Modal Title */
+#categoryModal h2 {
+font-size: 28px;
+margin-bottom: 10px;
+color: #343535; /* Primary blue color */
+text-align: center;
+font-weight: 700;
+}
+
+/* Modal Paragraph */
+#categoryModal p {
+font-size: 16px;
+color: #555;
+text-align: center;
+margin-bottom: 30px;
+}
+
+#categoryModal p i {
+color: #3f4041; /* Icon color */
+margin-right: 5px;
+}
+
+/* Courses Table */
+#categoryModal table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+#categoryModal table th, 
+#categoryModal table td {
+padding: 12px 15px;
+text-align: left;
+border: 1px solid #ddd; /* Table borders */
+}
+
+#categoryModal table th {
+background-color: #ff7e4b; /* Table header background */
+color: white; /* White text for headers */
+font-size: 16px;
+}
+
+#categoryModal table td {
+background-color: #f9f9f9; /* Light background for rows */
+color: #333;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+#categoryModal .modal-content {
+width: 95%;
+padding: 20px;
+}
+
+#categoryModal h2 {
+font-size: 24px;
+}
+
+#categoryModal p {
+font-size: 14px;
+}
+
+#categoryModal table th, 
+#categoryModal table td {
+font-size: 14px;
+padding: 10px;
+}
+}
+
+@media (max-width: 480px) {
+#categoryModal .modal-content {
+padding: 15px;
+}
+
+#categoryModal h2 {
+font-size: 20px;
+}
+
+#categoryModal table th, 
+#categoryModal table td {
+font-size: 12px;
+padding: 8px;
+}
+}
+
+
+
+
+
+/* Instructors Section */
+.instructors {
+    padding: 50px 0; /* Padding for the top and bottom */
+
+}
+
+
+
+/* Team item card */
+.team-item {
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    max-height:500px;
+    height: 100%;
+}
+
+/* Image container */
+.team-item .overflow-hidden {
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.team-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease; /* Smooth image zoom on hover */
+}
+
+/* Social media container */
+.team-item .instructor-social  {
+
+    width: auto;
+    height: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ff4a4ac7; /* White background for social icons */
+}
+
+/* Social icons style */
+.instructor-social  a {
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.instructor-social  a:hover {
+    color: #000000; /* Darker blue on hover */
+}
+
+/* Instructor name and bio */
+.team-item .text-center h5 {
+    font-size: 20px;
+    margin: 15px 0 5px;
+    color: #333; /* Dark text color for the name */
+}
+
+.team-item .text-center small {
+    font-size: 14px;
+    color: #777; /* Lighter text color for the bio */
+}
+
+/* Hover effect on the card */
+.team-item:hover {
+    transform: translateY(-10px); /* Slight move up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Hover effect on the image */
+.team-item:hover img {
+    transform: scale(1.1); /* Zoom image on hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .team-item {
+        margin-bottom: 30px; /* Space between cards on smaller screens */
+    }
+
+    .team-item img {
+        height: auto; /* Ensure responsive image scaling */
+    }
+
+    .instructor-social  {
+        width: 50px;
+        height: 50px;
+    }
+
+    .instructor-social  a {
+        font-size: 16px; /* Slightly smaller icons on smaller screens */
+    }
+}
+
+/* Align the course name (cname) to the left and set background color */
+.cname-left {
+text-align: left;
+background-color: #174777; /* Optional background color */
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 0; /* Remove bottom margin for better alignment */
+flex-grow: 1; /* Let the name take available space */
+color: #f8f9fa;
+max-width: 200px;
+width: 100%;
+}
+
+/* Modal General Styling */
+#registerModal .modal-dialog {
+    max-width: 700px; /* Set a custom width for the modal */
+}
+
+#registerModal .modal-content {
+    background-color: #f9f9f9; /* Light gray background for the modal content */
+    border-radius: 10px; /* Rounded corners for the modal */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for the modal */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    max-height: 80vh; /* Allow scrolling inside the body and ensure it fits inside the modal */
+
+}
+
+/* Modal Header Styling */
+#registerModal .modal-header {
+    background-color: #e49f8d; /* Bootstrap blue background for the header */
+    color: #fff; /* White text color */
+    border-bottom: 2px solid #ac6e5e; /* Slightly darker blue border */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#registerModal .modal-title {
+    font-weight: 600; /* Bold the modal title */
+    font-size: 1.5rem; /* Increase the size of the modal title */
+}
+
+#registerModal .btn-close {
+    color: #fff; /* Close button color */
+    opacity: 1;
+}
+
+/* Modal Body Styling */
+#registerModal .modal-body {
+    padding: 20px; /* Add more padding for content */
+    font-size: 1rem; /* Font size for content */
+    color: #333; /* Dark gray text */
+}
+
+/* Course Details Section Styling */
+#registerModal #courseDetails {
+    background-color: #f1f1f1; /* Light background for course details section */
+    padding: 15px; /* Padding around the content */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 15px; /* Space above the section */
+    font-size: 0.95rem; /* Slightly smaller font size */
+    color: #555; /* Lighter gray text */
+}
+
+#registerModal #courseDetails p {
+    margin: 5px 0; /* Space between the details paragraphs */
+}
+
+#registerModal #courseDetails strong {
+    font-weight: 600; /* Bold the strong elements */
+    color: #e49f8d; /* Use blue for important labels */
+}
+
+/* Modal Footer Styling */
+#registerModal .modal-footer {
+    background-color: #f9f9f9; /* Light gray background for the footer */
+    border-top: 1px solid #e5e5e5; /* Subtle border at the top */
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#registerModal .btn-primary {
+    background-color: #e49f8d; /* Primary button color */
+    border: none;
+    font-weight: 600; /* Bold text */
+    padding: 10px 20px; /* Extra padding */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#registerModal .btn-primary:hover {
+    background-color: #2F3645; /* Darker blue on hover */
+}
+
+#registerModal .btn-secondary {
+    background-color: #6c757d; /* Secondary button color */
+    border: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#registerModal .btn-secondary:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+.text-color1 {
+    color: #ff4a4ac7; /* First color, red */
+}
+
+.text-color2 {
+    color: rgb(255, 238, 82); /* Second color, blue */
+}
+
+/* General button styling */
+.btn {
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Read More Button with Icon */
+.read-more-btn i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.read-more-btn {
+    background-color: #2755b9;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    position: relative;
+}
+
+.read-more-btn:hover {
+    background-color: #e49f8d; /* Darker blue on hover */
+    color: white;
+}
+
+/* Register Button with Arrow in Circle */
+.register-btn {
+    position: relative;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    color: #000;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #ddd; /* Slightly darker background on hover */
+    color: #000;
+}
+
+.register-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover .register-icon {
+    background-color: #2F3645; /* Change arrow circle to blue on hover */
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .read-more-btn, 
+    .register-btn {
+        font-size: 0.9rem;  /* Reduce font size for tablets */
+        padding: 0.7rem 1.5rem;
+    }
+
+    .register-icon {
+        width: 28px;
+        height: 28px;  /* Slightly smaller icon */
+        margin-left: 8px;  /* Reduce margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .read-more-btn, 
+    .register-btn {
+        font-size: 0.85rem;  /* Further reduce font size for smaller screens */
+        padding: 0.6rem 1.2rem;
+    }
+
+    .register-icon {
+        width: 26px;
+        height: 26px;  /* Smaller icon for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .read-more-btn, 
+    .register-btn {
+        font-size: 0.75rem;  /* Smallest font size for mobile */
+        padding: 0.5rem 1rem;
+    }
+
+    .register-icon {
+        width: 24px;
+        height: 24px;  /* Smallest icon size for mobile */
+    }
+}
+/* Styling for the "View All" link */
+.view-all-link {
+    display: inline-block;
+    background-color: transparent; /* Transparent background for a minimal look */
+    color: #e49f8d; /* Primary blue color */
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #bb7b6b; /* Border matches the text color */
+    border-radius: 30px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-weight: 600;
+}
+
+.view-all-link:hover {
+    background-color: #2F3645; /* Blue background on hover */
+    color: white; /* Change text to white on hover */
+    text-decoration: none;
+}
+
+/* Add spacing to top or bottom as needed */
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+
+
+/* Newsletter styling */
+.newsletter {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color:white;
+}
+
+.newsletter-section p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Input container to hold both input and button */
+.submit-newsletter {
+    position: relative;
+    width: 100%;
+}
+
+.input-newsletter {
+    width: 100%;
+    padding: 10px 15px;
+    padding-right: 120px; /* Add padding to the right for the button */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.input-newsletter:focus {
+    border-color: #2F3645;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit button inside the input field */
+.submit-newsletter-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #e49f8d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-newsletter-btn:hover {
+    background-color: #2F3645;
+    transform: scale(1.05);
+    color:#fff;
+}
+
+/* Modal Custom Styling */
+#receiptModal .modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+#receiptModal .modal-content {
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#receiptModal .modal-header {
+    background-color: #eaf2fa;
+    color: rgb(7, 7, 7);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 1.5rem;
+}
+
+#receiptModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#receiptModal .btn-close {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+}
+
+#receiptModal .modal-body {
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+#receiptModal .modal-body p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+#receiptModal .modal-body p span {
+    color: #e49f8d;
+    font-weight: 600;
+}
+
+#receiptModal .modal-footer {
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+
+/* Close button */
+.closereceipt {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.closereceipt i {
+    margin-right: 8px;
+}
+
+/* PDF Download button */
+.pdfreceipt {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.pdfreceipt i {
+    margin-right: 8px;
+}
+
+/* Print button */
+.printreceipt {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.printreceipt i {
+    margin-right: 8px;
+}
+
+/* Hover effects */
+.closereceipt:hover {
+    background-color: #c82333cb;
+    color: #000;
+}
+
+.pdfreceipt:hover {
+    background-color: #0057b3c7;
+    color: #000;
+}
+
+.printreceipt:hover {
+    background-color: #138496c5;
+    color: #000;
+}
+
+@media print {
+    /* Hide everything on the page */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Only show the receipt modal and its contents */
+    #receiptModal, #receiptModal * {
+        visibility: visible;
+    }
+
+    /* Make sure the modal is positioned properly for printing */
+    #receiptModal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Optional: Ensure a white background for the modal content when printed */
+    #receiptModal .modal-content {
+        background-color: white !important;
+    }
+
+    /* Optional: Hide modal close, download, and print buttons */
+    .modal-footer, .btn-close {
+        display: none;
+    }
+}
+
+
+
+
+
+/* Position the Next/Prev buttons and Lines (formerly dots) on the left side */
+#categories-carousel {
+    position: relative;
+}
+
+/* Custom Next/Prev Buttons */
+#categories-carousel .owl-nav {
+    position: absolute;
+    left: -60px;  /* Positioning buttons to the left side */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#categories-carousel .owl-nav .owl-prev,
+#categories-carousel .owl-nav .owl-next {
+    background-color: #fa9f79;
+    border-radius: 25%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for next/prev buttons */
+#categories-carousel .owl-nav .owl-prev:hover,
+#categories-carousel .owl-nav .owl-next:hover {
+    background-color: #ff723a;
+}
+
+/* Custom Lines (now replacing dots) */
+.custom-dots {
+    position: absolute;
+    left: -60px;  /* Positioning lines to the left side */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Each line representing a dot */
+.custom-dot {
+    width: 2px;
+    height: 40px;  /* Adjust the height to form the line */
+    background-color: #ccc;
+    transition: background-color 0.3s;
+}
+
+/* Active line styling */
+.custom-dot.active {
+    background-color: #d87247;  /* Highlight active line */
+}
+
+/* Hover effect for lines */
+.custom-dot:hover {
+    background-color: #ff723a;
+}
+
+/* Style for the image to appear faded */
+#categories-carousel .owl-item .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensure the image covers the container */
+    display: block;
+    opacity: 1;  /* Set full opacity for the image */
+    transition: opacity 0.3s ease;  /* Smooth transition for hover */
+    max-height: 400px;  /* Set max height */
+}
+
+/* On hover, make the image a little less faded */
+#categories-carousel .owl-item .item:hover img {
+    opacity: 0.5;
+}
+
+/* Position the text-container to appear half over the image */
+#categories-carousel .owl-item .text-container {
+    position: absolute;
+    bottom: 30px;  /* Shift the container upwards to overlap half of the image */
+    left: 0;
+    width: 100%;
+    height: 100px;  /* Set height for the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Stack text and button vertically */
+    background-color: rgba(0, 0, 0, 0.692);  /* Semi-transparent background for contrast */
+    color: #ff2a2a;  /* Text color */
+    z-index: 2;  /* Ensure it's above the image */
+    transition: opacity 0.3s ease;
+    padding-top: 40px;  /* Optional padding */
+}
+
+/* Ensure the text-container is fully visible on hover */
+#categories-carousel .owl-item:hover .text-container {
+    opacity: 1;
+}
+
+/* Style the text */
+#categories-carousel .owl-item .text-container h5 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(255, 140, 73);
+}
+
+/* Style for the course count */
+#categories-carousel .owl-item .text-container .count {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #f9f9f9;
+}
+
+/* Style the button */
+#categories-carousel .owl-item .text-container .view-details-btn {
+    background-color: #fa9f79;
+    border: none;
+    padding: 10px 20px;
+    color: #161515;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+#categories-carousel .owl-item .text-container .view-details-btn:hover {
+    background-color: #ff723a;
+}
+
+
+
+
+/* Styles for the vision highlight section */
+.vision_highlight {
+    padding: 0;
+    margin-top: -170px;  /* Move the section upward */
+    z-index: 999;        /* Ensure it appears on top */
+    position: relative;  /* Z-index takes effect with position relative */
+}
+
+.vision_highlight h2 {
+    margin-bottom: 40px;
+}
+
+/* Common styling for all items */
+.vision_highlight .latest_blog_carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vision_highlight .latest_blog_carousel .single_item {
+    position: relative;
+    width: 33.33%;
+    text-align: center;
+    box-shadow: 0px 0px 15px 0px rgba(47, 47, 47, 0.05);
+    padding: 50px 20px;
+    color: white;
+}
+
+.vision_highlight .latest_blog_carousel .single_item:before {
+    position: absolute;
+    content: "";
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.vision_highlight .latest_blog_carousel .single_item:hover:before {
+    background: #e49f8d;
+}
+
+/* Position text */
+.vision_highlight .latest_blog_carousel .single_item .blog_title {
+    position: relative;
+    z-index: 1;
+}
+
+.vision_highlight .latest_blog_carousel .single_item .blog_title span {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-family: "Rubik", sans-serif;
+}
+
+.vision_highlight .latest_blog_carousel .single_item .blog_title h3 {
+    font-weight: 700;
+    font-size: 30px;
+    padding: 5px 0 30px;
+    line-height: 34px;
+}
+
+.vision_highlight .latest_blog_carousel .single_item .blog_title h3 a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.vision_highlight .latest_blog_carousel .single_item .blog_title p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0;
+    color: white;
+}
+
+/* Styling for the first item with a specific background color */
+.vision_highlight .latest_blog_carousel .single_item_first {
+    background-image: linear-gradient(to bottom, #2e6da4 50%, #d67a61 50%);
+    border-top: 5px solid #fff;
+    border-left: 5px solid #fff;
+}
+
+.vision_highlight .latest_blog_carousel .single_item_first span {
+    color: #ffffff;
+}
+
+/* Styling for the center item with a specific background color */
+.vision_highlight .latest_blog_carousel .single_item_center {
+    background-image: linear-gradient(to bottom, #d67a61 50%, #2e6da4 50%);
+    border: 5px solid #fff;
+}
+
+.vision_highlight .latest_blog_carousel .single_item_center span {
+    color: #ffffff;
+}
+
+/* Styling for the last item with a specific background color */
+.vision_highlight .latest_blog_carousel .single_item_last {
+    background-image: linear-gradient(to bottom, #2e6da4 50%, #d67a61 50%);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+.vision_highlight .latest_blog_carousel .single_item_last span {
+    color: #ffffff;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .vision_highlight .latest_blog_carousel .single_item {
+        width: 48%;  /* Two items per row for tablet */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vision_highlight .latest_blog_carousel .single_item {
+        width: 100%;  /* Single item per row for mobile */
+        margin-bottom: 20px;
+    }
+
+    .vision_highlight h2 {
+        font-size: 24px;  /* Adjust heading size on smaller screens */
+    }
+
+    .vision_highlight .latest_blog_carousel .single_item .blog_title h3 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .vision_highlight .latest_blog_carousel .single_item .blog_title span {
+        font-size: 18px;
+    }
+
+    .vision_highlight .latest_blog_carousel .single_item .blog_title p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vision_highlight{
+        margin-top: -100px;  /* Move the section upward */
+    }
+    .vision_highlight .latest_blog_carousel {
+        flex-direction: column;  /* Stack items vertically on very small screens */
+    }
+
+    .vision_highlight .latest_blog_carousel .single_item {
+        padding: 30px 15px;
+    }
+}
+
+
+.aboutus{
+    background-color: #fffcfbc5;
+}

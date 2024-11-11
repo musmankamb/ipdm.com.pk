@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Register CSS -->
+    <link href="../css/register.css" rel="stylesheet">
+</head>
+
+<style>
+ 
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner-overlay">
+        <div class="spinner-border" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto" id="toast-title">Notification</strong>
+                <small class="text-muted">just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-body">
+                Form submission result here.
+            </div>
+        </div>
+    </div>
+    <!-- Toast Notification End -->
+
+    <!-- Registration Form Start -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="header d-flex align-items-center mb-3">
+                    <img src="../img/logo.webp" alt="Logo" class="logo me-3" />
+                    <h2 class="fw-semi-bold">Institute of Personal Development Multan</h2>
+                </div>
+                <h3 class="fw-semi-bold text-center">Registration</h3>
+                <form id="registerForm" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm your password" required>
+                    </div>
+
+                    <!-- Custom Math Security Question -->
+                    <div class="mb-3">
+                        <label for="security_question" class="form-label">
+                            Solve the following:
+                            <span id="question"></span>
+                        </label>
+                        <input type="number" class="form-control" name="security_answer" id="security_answer" placeholder="Your answer" required>
+                    </div>
+
+                    <div id="error-message" style="color: red; margin-top: 10px;"></div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100" id="registerBtn">Register
+                        <span id="button-spinner" role="status" aria-hidden="true"></span>
+                    </button>
+                </form>
+                <p>Already have an account? <a href="../login" class="text-primary">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Registration Form End -->
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var correctAnswer; // Store the correct answer
+
+        // Load security question
+        function loadSecurityQuestion() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'generate_security_question.php', true);
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var question = response.num1 + " + " + response.num2;
+                    document.getElementById('question').textContent = question;
+                    correctAnswer = response.num1 + response.num2;
+                }
+            };
+            xhr.send();
+        }
+
+        window.onload = function() {
+            loadSecurityQuestion();
+        };
+
+        // Toast function to show the alert
+        function showToast(title, message) {
+            document.getElementById("toast-title").textContent = title;
+            document.getElementById("toast-body").textContent = message;
+            var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+            toast.show();
+        }
+
+        // Form submission with AJAX
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var form = this;
+            var formData = new FormData(form);
+            var errorMessage = document.getElementById("error-message");
+
+            // Clear any previous errors
+            errorMessage.textContent = '';
+
+            var password = formData.get("password");
+            var confirmPassword = formData.get("confirm_password");
+            var securityAnswer = parseInt(formData.get("security_answer"));
+
+            // Validation
+            if (password.length < 6) {
+                errorMessage.textContent = "Password must be at least 6 characters long.";
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match.";
+                return;
+            }
+
+            if (securityAnswer !== correctAnswer) {
+                errorMessage.textContent = "Incorrect answer to the security question.";
+                return;
+            }
+
+            // Show button spinner
+            document.getElementById("button-spinner").style.display = "inline-block";
+            document.getElementById("registerBtn").disabled = true;
+
+            // Submit the form via AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "register.php", true);
+            xhr.onload = function() {
+                document.getElementById("button-spinner").style.display = "none";
+                document.getElementById("registerBtn").disabled = false;
+
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+
+                    if (response.success) {
+                        showToast("Success", "Registration successful!");
+                        window.location.href = '../login'; // Correct syntax
+                    } else {
+                        showToast("Error", response.message || "Registration failed.");
+                    }
+                } else {
+                    showToast("Error", "An unexpected error occurred.");
+                }
+            };
+            xhr.send(formData);
+        });
+
+
+         // Show spinner with full page overlay
+function showSpinner() {
+    document.getElementById('spinner-overlay').style.display = 'block';  // Show spinner overlay
+}
+
+// Hide spinner after loading
+function hideSpinner() {
+    document.getElementById('spinner-overlay').style.display = 'none';  // Hide spinner overlay
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    hideSpinner();  // Ensure spinner is hidden when the DOM is fully loaded
+});
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+ /* Login Page Styles */
+ body {
+    background-color: #b5cde6;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    margin-top: 5%;
+    background-color: rgb(248, 237, 221);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+.logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
+h2 {
+    margin: 0; /* Remove default margin from heading */
+}
+.form-control {
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    transition: border 0.3s ease;
+}
+
+.form-control:focus {
+    border-color:antiquewhite;
+    box-shadow: 0 0 5px rgba(6, 187, 204, 0.5);
+}
+
+.btn-primary {
+    background-color: rgb(52, 173, 243);
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #6f7575;
+    transition: background-color 0.3s ease;
+}
+
+.text-primary {
+    color:rgba(0, 0, 0, 0.1);
+}
+
+.text-primary:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+    color: #777;
+}
+
+/* Animation for Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
